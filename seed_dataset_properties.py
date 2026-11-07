@@ -111,8 +111,9 @@ def parse_locality(loc_raw, default_city):
     return default_city
 
 # Authenticate with Spring Boot
-print("Logging in to Spring Boot...")
-login_res = requests.post('http://localhost:8085/api/auth/login', json={'email': 'admin@estateiq.com', 'password': 'Password123'})
+BACKEND_URL = os.environ.get("BACKEND_URL", "http://localhost:8085/api").rstrip("/")
+print(f"Logging in to Spring Boot at {BACKEND_URL}...")
+login_res = requests.post(f'{BACKEND_URL}/auth/login', json={'email': 'admin@estateiq.com', 'password': 'Password123'})
 if login_res.status_code != 200:
     print("Login failed:", login_res.text)
     exit(1)

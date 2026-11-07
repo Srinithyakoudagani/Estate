@@ -1,0 +1,25 @@
+# Maven installation
+/apache-maven-3.9.9/
+
+# Local MongoDB database
+/data/db/
+
+# Java build files
+**/target/
+
+# Node dependencies
+**/node_modules/
+
+# Frontend build
+**/dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# IDE files
+.idea/

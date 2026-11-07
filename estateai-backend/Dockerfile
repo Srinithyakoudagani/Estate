@@ -14,5 +14,5 @@ USER appuser
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8085
 ENV PORT=8085 \
-    SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/estateai
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
